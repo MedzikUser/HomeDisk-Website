@@ -1,5 +1,6 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import config from '../config'
 
 export default class MyDocument extends Document {
     static async getInitialProps(
@@ -42,6 +43,13 @@ export default class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Open+Sans&display=optional"
                         rel="stylesheet"
                     />
+
+                    {/* OpenGraph card */}
+                    <meta property="og:url" content={config.url} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content={config.title} />
+                    <meta property="og:description" content={config.description} />
+                    <meta property="og:image" content={config.thumbnail} />
                 </Head>
 
                 <body>

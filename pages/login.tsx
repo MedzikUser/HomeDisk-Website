@@ -8,6 +8,7 @@ import Description from '../components/description'
 import api from '../utils/api'
 import Error from '../components/auth/error'
 import Router from 'next/router'
+import config from '../config'
 
 export default function Home() {
     // cookies manager
@@ -66,7 +67,7 @@ export default function Home() {
     return (
         <Container>
             <Head>
-                <title>Login | HomeDisk</title>
+                <title>Login | {config.title}</title>
             </Head>
 
             <Description>Sign in</Description>

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Router from 'next/router'
 import Title from '../../components/title'
 import Container from '../../components/container'
+import config from '../../config'
 
 export default function Home() {
     const [cookies] = useCookies(["token"])
@@ -18,7 +19,7 @@ export default function Home() {
     return (
         <Container>
             <Head>
-                <title>HomeDisk</title>
+                <title>Dashboard | {config.title}</title>
             </Head>
 
             <Title>Dashboard</Title>

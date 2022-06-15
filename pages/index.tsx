@@ -10,6 +10,7 @@ import Description from '../components/description'
 import Title from '../components/title'
 import typingAnimation from '../utils/typing-animation'
 import CardDashboard from '../components/cards/card-dashboard'
+import config from '../config'
 
 export default function Home() {
     const [cookies] = useCookies(["token"])
@@ -30,7 +31,7 @@ export default function Home() {
     return (
         <Container>
             <Head>
-                <title>HomeDisk</title>
+                <title>{config.title}</title>
             </Head>
 
             <Title id="animatedText">Welcome to HomeDisk!</Title>
