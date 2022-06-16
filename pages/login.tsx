@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { TextField } from '@mui/material'
-import Head from 'next/head'
 import { useCookies } from 'react-cookie'
+import Router from 'next/router'
+import Head from 'next/head'
+import { TextField } from '@mui/material'
 import Container from '../components/container'
 import Button from '../components/auth/button'
 import Description from '../components/description'
 import api from '../utils/api'
 import Error from '../components/auth/error'
-import Router from 'next/router'
 import config from '../config'
 
 export default function Home() {

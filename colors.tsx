@@ -1,7 +1,6 @@
 const colors = {
     card: {
         hover: {
-            primary: '#43B0F1',
             border: '#43B0F1',
         },
         signin: {

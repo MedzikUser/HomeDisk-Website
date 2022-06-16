@@ -1,3 +1,4 @@
+// Typing animation
 export default function typingAnimation() {
     // get text to animate
     const animatedText = document.getElementById('animatedText').innerHTML
