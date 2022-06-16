@@ -44,6 +44,9 @@ export default class MyDocument extends Document {
                         rel="stylesheet"
                     />
 
+                    {/* HTML Meta tags */}
+                    <meta name="description" content={config.description} />
+
                     {/* OpenGraph card */}
                     <meta property="og:url" content={config.url} />
                     <meta property="og:type" content="website" />

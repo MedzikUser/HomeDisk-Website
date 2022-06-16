@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material'
+import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import colors from '../colors'
 
