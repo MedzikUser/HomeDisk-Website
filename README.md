@@ -24,6 +24,6 @@ First clone the repository: `git clone https://github.com/MedzikUser/HomeDisk-We
 
 First install a dependencies: `pnpm install`
 
-Next build website: `pnpm export`
+Next build website: `pnpm build`
 
 Optionally export website to a static HTML files: `pnpm export`
