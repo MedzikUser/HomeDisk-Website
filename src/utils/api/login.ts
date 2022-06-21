@@ -1,23 +1,23 @@
-import axios from './axios'
-import handleError from './error'
+import axios from "./axios";
+import handleError from "./error";
 
 // Send HTTP Request to api `/auth/login`
 export default async function login(username: string, password: string): Promise<string> {
     const request = axios.post("/auth/login", {
         username,
         password,
-    })
+    });
 
     const response = request
         // wait for a server send response
-        .then(response => {
-            const { data } = response
+        .then((response) => {
+            const { data } = response;
 
-            return data.LoggedIn.access_token
+            return data.LoggedIn.access_token;
         })
         // handle error
-        .catch(handleError)
+        .catch(handleError);
 
     // return server response
-    return response
+    return response;
 }

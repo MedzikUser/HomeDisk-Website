@@ -1,5 +1,5 @@
-import login from "./login"
+import login from "./login";
 
-const api = { login }
+const api = { login };
 
-export default api
+export default api;

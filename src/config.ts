@@ -4,6 +4,6 @@ const config = {
     description: "Fast, lightweight and Open Source local cloud for your data written in Rust",
     thumbnail: "https://cdn.medzik.xyz/fz4QGfS.png",
     apiUrl: "/api",
-}
+};
 
-export default config
+export default config;
