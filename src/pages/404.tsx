@@ -1,15 +1,15 @@
-import Head from 'next/head'
-import { useEffect } from 'react'
-import Card from '../components/cards/card'
-import CardHome from '../components/cards/card-home'
-import Container from '../components/container'
-import Title from '../components/title'
-import config from '../config'
-import typingAnimation from '../utils/typing-animation'
+import Head from "next/head";
+import { useEffect } from "react";
+import Card from "../components/cards/card";
+import CardHome from "../components/cards/card-home";
+import Container from "../components/container";
+import Title from "../components/title";
+import config from "../config";
+import typingAnimation from "../utils/typing-animation";
 
 export default function Home() {
     // Typing title animation
-    useEffect(() => typingAnimation())
+    useEffect(() => typingAnimation());
 
     return (
         <Container>
@@ -26,5 +26,5 @@ export default function Home() {
                 </Card>
             </CardHome>
         </Container>
-    )
+    );
 }

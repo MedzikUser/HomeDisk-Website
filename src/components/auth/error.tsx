@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default styled.div`
     color: ${({ theme }) => theme.colors.error};
-    padding-bottom: 1rem
-`
+    padding-bottom: 1rem;
+`;

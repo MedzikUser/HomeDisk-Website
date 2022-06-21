@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default styled.a`
     padding-top: 1rem;
@@ -9,4 +9,4 @@ export default styled.a`
     :active {
         color: ${({ theme }) => theme.colors.card.home.primary_hover};
     }
-`
+`;

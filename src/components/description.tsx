@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default styled.p`
     color: ${({ theme }) => theme.colors.description};
@@ -6,4 +6,4 @@ export default styled.p`
     margin-right: 10px;
     text-align: center;
     font-size: 1.5rem;
-`
+`;

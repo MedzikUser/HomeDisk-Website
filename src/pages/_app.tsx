@@ -1,6 +1,6 @@
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import colors from '../colors'
+import { ThemeProvider as MuiThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import colors from "../colors";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -13,17 +13,17 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
-`
+`;
 
 const theme = {
     colors,
-}
+};
 
 const muiThene = createTheme({
     palette: {
         mode: "dark",
     },
-})
+});
 
 export default function App({ Component, pageProps }) {
     return (
@@ -36,5 +36,5 @@ export default function App({ Component, pageProps }) {
                 </ThemeProvider>
             </MuiThemeProvider>
         </>
-    )
+    );
 }

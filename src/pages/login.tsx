@@ -1,68 +1,73 @@
-import React, { useEffect, useState } from 'react'
-import { useCookies } from 'react-cookie'
-import Router from 'next/router'
-import Head from 'next/head'
-import { TextField } from '@mui/material'
-import Container from '../components/container'
-import Button from '../components/auth/button'
-import Description from '../components/description'
-import api from '../utils/api'
-import Error from '../components/auth/error'
-import config from '../config'
+import {
+    ChangeEventHandler as ReactChangeEventHandler,
+    KeyboardEvent as ReactKeyboardEvent,
+    useEffect,
+    useState,
+} from "react";
+import { useCookies } from "react-cookie";
+import Router from "next/router";
+import Head from "next/head";
+import { TextField } from "@mui/material";
+import Container from "../components/container";
+import Description from "../components/description";
+import Error from "../components/auth/error";
+import Button from "../components/auth/button";
+import api from "../utils/api";
+import config from "../config";
 
 export default function Home() {
     // cookies manager
-    const [cookies, setCookies] = useCookies(["token"])
+    const [cookies, setCookies] = useCookies(["token"]);
 
     // if user is logged in redirect to dashboard
     useEffect(() => {
         if (cookies.token) {
-            Router.push("/user/dashboard")
+            Router.push("/user/dashboard");
         }
-    }, [cookies])
+    }, [cookies]);
 
     // error message
-    const [error, setError] = useState("")
+    const [error, setError] = useState("");
     // username value
-    const [username, setUsername] = useState("")
+    const [username, setUsername] = useState("");
     // password value
-    const [password, setPassword] = useState("")
+    const [password, setPassword] = useState("");
 
     // handle change username value
-    const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> = event => {
-        const value = event.target.value
-        setUsername(value)
-    }
+    const handleUsernameChange: ReactChangeEventHandler<HTMLInputElement> = (event) => {
+        const value = event.target.value;
+        setUsername(value);
+    };
 
     // handle change password value
-    const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = event => {
-        const value = event.target.value
-        setPassword(value)
-    }
+    const handlePasswordChange: ReactChangeEventHandler<HTMLInputElement> = (event) => {
+        const value = event.target.value;
+        setPassword(value);
+    };
 
     // handle click "Enter (Return)"
-    const handleKeyPress = (event: React.KeyboardEvent) => {
+    const handleKeyPress = (event: ReactKeyboardEvent) => {
         if (event.keyCode === 13 || event.which === 13 || event.charCode === 13) {
-            handleLogin()
+            handleLogin();
         }
-    }
+    };
 
     // handle login
     const handleLogin = () => {
-        const request = api.login(username, password)
+        const request = api.login(username, password);
 
         // send request to api
         request
             // wait for a server send response
-            .then(token => {
+            .then((token) => {
                 // set cookie
-                setCookies("token", token)
+                setCookies("token", token);
                 // clear error value
-                setError("")
+                setError("");
             })
             // set error message
-            .catch(err => setError(err.toString()))
-    }
+            .catch((err) => setError(err.toString()));
+    };
 
     return (
         <Container>
@@ -73,9 +78,7 @@ export default function Home() {
             <Description>Sign in</Description>
 
             {/* If error show error message */}
-            {error != "" && (
-                <Error>{error}</Error>
-            )}
+            {error != "" && <Error>{error}</Error>}
 
             {/* Username input */}
             <TextField
@@ -109,5 +112,5 @@ export default function Home() {
                 Login
             </Button>
         </Container>
-    )
+    );
 }

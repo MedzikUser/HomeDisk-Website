@@ -1,32 +1,32 @@
-import { useEffect, useState } from 'react'
-import Head from 'next/head'
-import { useCookies } from 'react-cookie'
-import Card from '../components/cards/card'
-import CardRegister from '../components/cards/card-register'
-import CardSignin from '../components/cards/card-signin'
-import Grid from '../components/cards/grid'
-import Container from '../components/container'
-import Description from '../components/description'
-import Title from '../components/title'
-import typingAnimation from '../utils/typing-animation'
-import CardDashboard from '../components/cards/card-dashboard'
-import config from '../config'
+import { useEffect, useState } from "react";
+import Head from "next/head";
+import { useCookies } from "react-cookie";
+import Card from "../components/cards/card";
+import CardRegister from "../components/cards/card-register";
+import CardSignin from "../components/cards/card-signin";
+import Grid from "../components/cards/grid";
+import Container from "../components/container";
+import Description from "../components/description";
+import Title from "../components/title";
+import typingAnimation from "../utils/typing-animation";
+import CardDashboard from "../components/cards/card-dashboard";
+import config from "../config";
 
 export default function Home() {
-    const [cookies] = useCookies(["token"])
+    const [cookies] = useCookies(["token"]);
 
     // Typing title animation
-    useEffect(() => typingAnimation())
+    useEffect(() => typingAnimation());
 
     // display cards for a not logged user
-    const [cards, setCards] = useState(<CardsNotLogged />)
+    const [cards, setCards] = useState(<CardsNotLogged />);
 
     // if user is logged show cards for logged user
     useEffect(() => {
         if (cookies.token) {
-            setCards(<CardsLogged />)
+            setCards(<CardsLogged />);
         }
-    }, [cookies])
+    }, [cookies]);
 
     return (
         <Container>
@@ -40,11 +40,9 @@ export default function Home() {
                 Fast and lightweight local cloud for your data written in Rust
             </Description>
 
-            <Grid>
-                {cards}
-            </Grid>
+            <Grid>{cards}</Grid>
         </Container>
-    )
+    );
 }
 
 function CardsNotLogged() {
@@ -66,7 +64,7 @@ function CardsNotLogged() {
                 </Card>
             </CardRegister>
         </>
-    )
+    );
 }
 
 function CardsLogged() {
@@ -80,5 +78,5 @@ function CardsLogged() {
                 </Card>
             </CardDashboard>
         </>
-    )
+    );
 }

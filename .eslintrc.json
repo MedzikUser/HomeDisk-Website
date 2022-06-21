@@ -3,15 +3,23 @@
         "eslint:recommended",
         "next/core-web-vitals"
     ],
+    "plugins": [
+        "prettier"
+    ],
     "rules": {
-        "semi": [
-            "warn",
-            "never"
-        ],
         "no-unused-vars": [
             "warn"
         ],
         "no-unused-expressions": [
+            "warn"
+        ],
+        "no-console": [
+            "warn"
+        ],
+        "no-debugger": [
+            "warn"
+        ],
+        "prettier/prettier": [
             "warn"
         ]
     }

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default styled.div`
     background-color: ${({ theme }) => theme.colors.background};
@@ -10,4 +10,4 @@ export default styled.div`
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-`
+`;

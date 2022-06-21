@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default styled.a`
     color: ${({ theme }) => theme.colors.card.signin.primary};
@@ -8,4 +8,4 @@ export default styled.a`
     :active {
         color: ${({ theme }) => theme.colors.card.signin.primary_hover};
     }
-`
+`;
