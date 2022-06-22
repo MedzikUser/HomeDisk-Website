@@ -22,6 +22,14 @@ const colors = {
         primary: "#43B0F1",
         border: "#444444",
     },
+    user: {
+        table: {
+            bg: "#B76E79",
+            color: "#B8C7F4",
+            textShadow: "#000000",
+            border: "#D5ABB2",
+        },
+    },
     primary: "#F2F0ED",
     error: "#FF8370",
     background: "#080A0B",

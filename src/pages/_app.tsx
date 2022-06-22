@@ -3,6 +3,10 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import colors from "../colors";
 
 const GlobalStyle = createGlobalStyle`
+    * {
+        color-scheme: dark;
+    }
+
     body {
         margin: 0;
         padding: 0;

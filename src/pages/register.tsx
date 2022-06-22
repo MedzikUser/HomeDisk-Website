@@ -55,7 +55,7 @@ export default function Home() {
 
     // handle login
     const handleLogin = () => {
-        const request = api.login(username, password);
+        const request = api.register(username, password);
 
         // send request to api
         request
@@ -73,10 +73,10 @@ export default function Home() {
     return (
         <Container>
             <Head>
-                <title>Login | {config.title}</title>
+                <title>Register | {config.title}</title>
             </Head>
 
-            <Description>Sign in</Description>
+            <Description>Create account</Description>
 
             {/* If error show error message */}
             {error != "" && <Error>{error}</Error>}
@@ -100,7 +100,7 @@ export default function Home() {
                 onClick={handleLogin}
                 disabled={username == "" || password == ""}
             >
-                Login
+                Register
             </Button>
         </Container>
     );

@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 import Head from "next/head";
 import Router from "next/router";
-import Title from "../../components/title";
 import Container from "../../components/container";
+import Table from "../../components/user/table";
+import Description from "../../components/description";
 import config from "../../config";
 
 export default function Home() {
@@ -22,7 +23,25 @@ export default function Home() {
                 <title>Dashboard | {config.title}</title>
             </Head>
 
-            <Title>Dashboard</Title>
+            <Description>Dashboard</Description>
+
+            <Table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Size</td>
+                        <td>Modified</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Name of the file</td>
+                        <td>Size of the file</td>
+                        <td>Unknown</td>
+                    </tr>
+                </tbody>
+            </Table>
         </Container>
     );
 }
