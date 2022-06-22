@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import colors from "../../colors";
 
 export default styled.a`
-    color: ${({ theme }) => theme.colors.card.signin.primary};
+    color: ${colors.card.signin.primary};
 
     :hover,
     :focus,
     :active {
-        color: ${({ theme }) => theme.colors.card.signin.primary_hover};
+        color: ${colors.card.signin.primary_hover};
     }
 `;

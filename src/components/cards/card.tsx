@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import colors from "../../colors";
 
 export default styled.div`
     margin: 1rem;
@@ -6,7 +7,7 @@ export default styled.div`
     text-align: left;
     color: inherit;
     text-decoration: none;
-    border: 2px solid ${({ theme }) => theme.colors.card.border};
+    border: 2px solid ${colors.card.border};
     border-radius: 10px;
     transition: color 0.15s ease, border-color 0.25s ease;
     max-width: 300px;
@@ -14,7 +15,7 @@ export default styled.div`
     :hover,
     :focus,
     :active {
-        border-color: ${({ theme }) => theme.colors.card.hover.border};
+        border-color: ${colors.card.hover.border};
     }
 
     h2 {

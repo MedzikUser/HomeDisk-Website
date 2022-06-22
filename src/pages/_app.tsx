@@ -8,10 +8,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        font-family: 'Open Sans';
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Open Sans';
     }
 
     a {

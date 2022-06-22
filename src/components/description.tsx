@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import colors from "../colors";
 
 export default styled.p`
-    color: ${({ theme }) => theme.colors.description};
+    color: ${colors.description};
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;

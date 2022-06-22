@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import colors from "../../colors";
 
 export default styled.a`
     padding-top: 1rem;
-    color: ${({ theme }) => theme.colors.card.home.primary};
+    color: ${colors.card.home.primary};
 
     :hover,
     :focus,
     :active {
-        color: ${({ theme }) => theme.colors.card.home.primary_hover};
+        color: ${colors.card.home.primary_hover};
     }
 `;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import colors from "../colors";
 
 export default styled.div`
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${colors.background};
     color: ${({ theme }) => theme.colors.primary};
     height: 100%;
     min-height: 100vh;
