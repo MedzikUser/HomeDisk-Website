@@ -4,7 +4,6 @@ import Card from "../components/cards/card";
 import CardHome from "../components/cards/card-home";
 import Container from "../components/container";
 import Title from "../components/title";
-import config from "../config";
 import typingAnimation from "../utils/typing-animation";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
     return (
         <Container>
             <Head>
-                <title>404 | {config.title}</title>
+                <title>404 | HomeDisk</title>
             </Head>
 
             <Title id="animatedText">404 | This page could not be found</Title>

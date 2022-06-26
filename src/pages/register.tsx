@@ -12,7 +12,6 @@ import Description from "../components/description";
 import Error from "../components/auth/error";
 import Button from "../components/auth/button";
 import api from "../utils/api";
-import config from "../config";
 import TextFieldUsername from "../components/auth/field-username";
 import TextFieldPassword from "../components/auth/field-password";
 
@@ -73,7 +72,7 @@ export default function Home() {
     return (
         <Container>
             <Head>
-                <title>Register | {config.title}</title>
+                <title>Register | HomeDisk</title>
             </Head>
 
             <Description>Create account</Description>
