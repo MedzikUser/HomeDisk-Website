@@ -1,8 +1,9 @@
 const config = {
-    url: "https://homedisk.medzik.xyz",
-    description: "Fast, lightweight and Open Source local cloud for your data written in Rust",
-    thumbnail: "https://cdn.medzik.xyz/fz4QGfS.png",
-    apiUrl: "/api",
-};
+  title: 'HomeDisk',
+  description: 'Fast and lightweight local cloud for your data written in Rust.',
+  previewImage: '',
+  url: 'https://homedisk.medzik.xyz',
+  apiUrl: 'http://localhost:8080/api'
+}
 
-export default config;
+export default config

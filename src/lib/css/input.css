@@ -1,0 +1,22 @@
+input {
+  display: block;
+  background: none;
+  border-radius: 10px;
+  overflow: hidden;
+  outline: none;
+  margin: 0;
+  color: #ffffff;
+  padding: 0.25rem 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: border 500ms;
+  text-align: center;
+}
+
+input:valid {
+  color: #d2fba4;
+}
+
+input:invalid {
+  border: 2px solid #f1c0b9;
+}

@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /login
+Disallow: /register
+Disallow: /user/
+
+User-agent: ia_archiver
+Disallow: /

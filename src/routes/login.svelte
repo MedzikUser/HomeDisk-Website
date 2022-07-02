@@ -1,0 +1,95 @@
+<script lang="ts">
+  import { getNotificationsContext } from 'svelte-notifications'
+  import '$lib/css/input.css'
+  import '$lib/css/button.css'
+  import api from '$lib/api'
+  import { setToken } from '$lib/utils/token'
+
+  let username = ''
+  let password = ''
+
+  const { addNotification } = getNotificationsContext()
+
+  async function submit() {
+    if (username == '' || password == '') {
+      addNotification({
+        text: 'At least one field is empty',
+        position: 'bottom-center',
+        type: 'danger',
+        removeAfter: 5000 // 5 seconds
+      })
+
+      return
+    }
+
+    const usernameT = username
+    const passwordT = username
+
+    username = ''
+    password = ''
+
+    try {
+      const token = await api.auth.login(usernameT, passwordT)
+
+      setToken(token)
+
+      window.location.replace('/user/dashboard')
+    } catch (err: any) {
+      addNotification({
+        text: err.toString(),
+        position: 'bottom-center',
+        type: 'danger',
+        removeAfter: 5000 // 5 seconds
+      })
+    }
+  }
+</script>
+
+<svelte:head>
+  <title>Login - HomeDisk</title>
+</svelte:head>
+
+<div>
+  <h1>Sign in</h1>
+
+  <input type="text" name="username" placeholder="Username" bind:value={username} />
+
+  <input type="password" name="password" placeholder="Password" bind:value={password} />
+
+  <button on:click={submit}>Sign in</button>
+</div>
+
+<style>
+  h1 {
+    color: #f3bc50;
+  }
+
+  input {
+    border-color: #ff8aff;
+    margin: 0.5em;
+  }
+
+  input:focus {
+    border-color: #ff2eff;
+  }
+
+  input::placeholder {
+    color: #ffffff;
+  }
+
+  button {
+    border: 2px solid #ef7c8e;
+    color: #ef7c8e;
+  }
+
+  button:hover,
+  button:focus {
+    border-color: #ff3b9d;
+    color: #ff3b9d;
+  }
+
+  button:focus {
+    background-color: #222;
+    transition: background 500ms ease-out;
+  }
+</style>

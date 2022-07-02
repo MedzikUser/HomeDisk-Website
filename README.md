@@ -1,29 +1,38 @@
-# HomeDisk-Website cloud server
+# create-svelte
 
-[total-lines]: https://img.shields.io/tokei/lines/github/MedzikUser/HomeDisk-Website?style=for-the-badge&logo=github&color=fede00
-[code-size]: https://img.shields.io/github/languages/code-size/MedzikUser/HomeDisk-Website?style=for-the-badge&color=c8df52&logo=github
-[ci]: https://img.shields.io/github/workflow/status/MedzikUser/HomeDisk-Website/Next/main?style=for-the-badge
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-[home-screenshot]: https://cdn.medzik.xyz/fz4QGfS.png
-[login-screenshot]: https://cdn.medzik.xyz/vo10bes.png
+## Creating a project
 
-[![total-lines]](https://github.com/MedzikUser/HomeDisk-Website)
-[![code-size]](https://github.com/MedzikUser/HomeDisk-Website)
-[![ci]](https://github.com/MedzikUser/HomeDisk-Website/actions/workflows/rust.yml)
+If you're seeing this, you've probably already done this step. Congrats!
 
-![home-screenshot]
-![login-screenshot]
+```bash
+# create a new project in the current directory
+npm init svelte
 
-## 👨‍💻 Building
+# create a new project in my-app
+npm init svelte my-app
+```
 
-First clone the repository: `git clone https://github.com/MedzikUser/HomeDisk-Website.git`
+## Developing
 
-### Requirements
-- Nodejs
-- pnpm
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-First install a dependencies: `pnpm install`
+```bash
+npm run dev
 
-Next build website: `pnpm build`
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-Optionally export website to a static HTML files: `pnpm export`
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #080a0b;
+  color: #f2f0ed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: -apple-system, 'Open Sans';
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
