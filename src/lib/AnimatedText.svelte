@@ -2,13 +2,13 @@
   import { onMount } from 'svelte'
 
   onMount(() => {
-    const d: any = document
+    const doc = document as any
 
     // get text to animate
-    const animatedText = d.getElementById('animatedText').innerHTML
+    const animatedText = doc.getElementById('animatedText').innerHTML
 
     // clear the initial text
-    d.getElementById('animatedText').innerHTML = ''
+    doc.getElementById('animatedText').innerHTML = ''
 
     // animate function
     async function animateText() {
@@ -22,7 +22,7 @@
 
     // update text function
     function updateText(i: number) {
-      d.getElementById('animatedText').innerHTML += animatedText[i]
+      doc.getElementById('animatedText').innerHTML += animatedText[i]
     }
 
     // run animation

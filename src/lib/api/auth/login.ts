@@ -1,5 +1,5 @@
-import axios from '../axios'
-import handleError from '../utils/handleError'
+import axios from '$lib/api/axios'
+import handleError from '$lib/api/utils/handleError'
 
 export default async function (username: string, password: string): Promise<string> {
   const request = axios.post('/auth/login', {

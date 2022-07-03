@@ -1,12 +1,22 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
   import { getNotificationsContext } from 'svelte-notifications'
   import '$lib/css/input.css'
   import '$lib/css/button.css'
   import api from '$lib/api'
-  import { setToken } from '$lib/utils/token'
+  import { getToken, setToken } from '$lib/utils/token'
+  import redirect from '$lib/utils/redirect'
 
   let username = ''
   let password = ''
+
+  onMount(() => {
+    let token = getToken()
+
+    if (token) {
+      redirect('/user/dashboard')
+    }
+  })
 
   const { addNotification } = getNotificationsContext()
 
@@ -23,7 +33,7 @@
     }
 
     const usernameT = username
-    const passwordT = username
+    const passwordT = password
 
     username = ''
     password = ''
@@ -33,7 +43,7 @@
 
       setToken(token)
 
-      window.location.replace('/user/dashboard')
+      redirect('/user/dashboard')
     } catch (err: any) {
       addNotification({
         text: err.toString(),
@@ -49,15 +59,13 @@
   <title>Register - HomeDisk</title>
 </svelte:head>
 
-<div>
-  <h1>Register</h1>
+<h1>Register</h1>
 
-  <input type="text" name="username" placeholder="Username" bind:value={username} />
+<input type="text" name="username" placeholder="Username" bind:value={username} />
 
-  <input type="password" name="password" placeholder="Password" bind:value={password} />
+<input type="password" name="password" placeholder="Password" bind:value={password} />
 
-  <button on:click={submit}>Sign in</button>
-</div>
+<button on:click={submit}>Sign in</button>
 
 <style>
   h1 {
