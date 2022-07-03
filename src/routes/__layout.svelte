@@ -3,8 +3,8 @@
   import Header from '$lib/Header.svelte'
   import config from '../config'
   import '../app.css'
-import Container from '$lib/Container.svelte'
-import Footer from '$lib/Footer.svelte'
+  import Container from '$lib/Container.svelte'
+  import Footer from '$lib/Footer.svelte'
 </script>
 
 <svelte:head>
