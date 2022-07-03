@@ -1,7 +1,10 @@
 <script>
   import Notifications from 'svelte-notifications'
+  import Header from '$lib/Header.svelte'
   import config from '../config'
   import '../app.css'
+import Container from '$lib/Container.svelte'
+import Footer from '$lib/Footer.svelte'
 </script>
 
 <svelte:head>
@@ -22,7 +25,13 @@
 </svelte:head>
 
 <Notifications>
-  <main>
-    <slot />
-  </main>
+  <Container>
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </Container>
 </Notifications>

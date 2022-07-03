@@ -6,11 +6,17 @@
   let dirs: DirType[] = []
   let files: FileType[] = []
 
-  onMount(async () => {
+  // on page load get a list of files and directories
+  onMount(() => {
+    getFilesList()
+  })
+
+  // Send a request to the api to get a list of files and directories
+  async function getFilesList() {
     const data = await api.user.listFiles('/')
     dirs = data.dirs
     files = data.files
-  })
+  }
 </script>
 
 <svelte:head>
@@ -58,7 +64,7 @@
 <style>
   table {
     table-layout: fixed;
-    border: 1px dashed #fff;
+    border: 1px dashed #ffffff;
     margin: auto;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -71,7 +77,8 @@
 
   td,
   tr {
-    border-top: 1px solid #fff;
+    width: 100px;
+    border-top: 1px solid #ffffff;
     padding: 8px;
   }
 </style>

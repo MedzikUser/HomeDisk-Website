@@ -1,7 +1,13 @@
-<script>
+<script lang="ts">
   import AnimatedText from '$lib/AnimatedText.svelte'
   import Card from '$lib/Card.svelte'
   import Grid from '$lib/Grid.svelte'
+  import { getToken } from '$lib/utils/token'
+  import { onMount } from 'svelte'
+
+  let token: string | null
+
+  onMount(() => (token = getToken()))
 </script>
 
 <svelte:head>
@@ -15,19 +21,31 @@
 <p class="description">Fast and lightweight local cloud for your data written in Rust</p>
 
 <Grid>
-  <a href="/login" class="card-signin">
-    <Card>
-      <h1>Sign in &rarr;</h1>
-      <p>Log in to your account</p>
-    </Card>
-  </a>
+  {#if !token}
+    <!-- Sign in card -->
+    <a href="/login" class="card-signin">
+      <Card>
+        <h1>Sign in &rarr;</h1>
+        <p>Log in to your account</p>
+      </Card>
+    </a>
 
-  <a href="/register" class="card-register">
-    <Card>
-      <h1>Register &rarr;</h1>
-      <p>Create a new account</p>
-    </Card>
-  </a>
+    <!-- Register card -->
+    <a href="/register" class="card-register">
+      <Card>
+        <h1>Register &rarr;</h1>
+        <p>Create a new account</p>
+      </Card>
+    </a>
+  {:else}
+    <!-- Dashboard card -->
+    <a href="/user/dashboard" class="card-dashboard">
+      <Card>
+        <h1>Dashboard &rarr;</h1>
+        <p>Go to user dashboard</p>
+      </Card>
+    </a>
+  {/if}
 </Grid>
 
 <style>
@@ -61,5 +79,14 @@
   .card-register:hover,
   .card-register:focus {
     color: #22cae0;
+  }
+
+  .card-dashboard {
+    color: #fbe7c6;
+  }
+
+  .card-dashboard:hover,
+  .card-dashboard:focus {
+    color: #f1d3a5;
   }
 </style>

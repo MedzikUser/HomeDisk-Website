@@ -9,6 +9,10 @@ const config = {
 
   kit: {
     adapter: adapter()
+  },
+
+  experimental: {
+    useVitePreprocess: true
   }
 }
 
