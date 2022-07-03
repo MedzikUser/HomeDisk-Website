@@ -1,7 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #080A0B;
+  background-image: url('/background.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
   color: #F2F0ED;
   font-family: -apple-system, 'Open Sans';
 }

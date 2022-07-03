@@ -5,3 +5,5 @@ export function setToken(token: string) {
 export function getToken() {
   return localStorage.getItem('token')
 }
+
+export type tokenType = string | null
