@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   background-image: url('/background.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   color: #f2f0ed;
   font-family: -apple-system, 'Open Sans';
 }
