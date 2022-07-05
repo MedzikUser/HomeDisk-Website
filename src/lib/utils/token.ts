@@ -2,12 +2,12 @@ export function setToken(token: string) {
   localStorage.setItem('token', token)
 }
 
-export function getToken() {
+export function getToken(): Token {
   return localStorage.getItem('token')
 }
 
 export function deleteToken() {
-  localStorage.clear('token')
+  localStorage.removeItem('token')
 }
 
-export type tokenType = string | null
+export type Token = string | null

@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  /* If background image is loading don't display light background */
+  background-color: #080a0b;
+  /* Background svg image */
   background-image: url('/background.svg');
   background-size: cover;
   background-position: center;
@@ -16,7 +19,6 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: -apple-system, 'Open Sans';
 }
 
 a {

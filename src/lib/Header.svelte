@@ -3,10 +3,10 @@
   import Home from '$lib/icons/Home.svelte'
   import Login from '$lib/icons/Login.svelte'
   import Logout from '$lib/icons/Logout.svelte'
-  import { deleteToken, getToken, type tokenType } from '$lib/utils/token'
+  import { deleteToken, getToken, type Token } from '$lib/utils/token'
   import redirect from '$lib/utils/redirect'
 
-  let token: tokenType
+  let token: Token
 
   onMount(() => {
     token = getToken()
