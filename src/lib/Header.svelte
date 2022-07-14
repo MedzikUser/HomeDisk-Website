@@ -5,6 +5,7 @@
   import Logout from '$lib/icons/Logout.svelte'
   import { deleteToken, getToken, type Token } from '$lib/utils/token'
   import redirect from '$lib/utils/redirect'
+  import Account from './icons/Account.svelte'
 
   let token: Token
 
@@ -26,6 +27,12 @@
   <nav>
     <ul class="nav-links">
       {#if token}
+        <li>
+          <a href="/user/dashboard">
+            <Account />
+          </a>
+        </li>
+
         <li>
           <a href="#logout" on:click={logout}>
             <Logout />

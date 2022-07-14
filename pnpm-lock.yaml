@@ -13,6 +13,7 @@ specifiers:
   prettier-plugin-svelte: 2.7.0
   svelte: 3.49.0
   svelte-check: 2.8.0
+  svelte-modals: 1.1.0
   svelte-notifications: 0.9.95
   svelte-preprocess: 4.10.7
   svelte2tsx: 0.5.11
@@ -22,6 +23,7 @@ specifiers:
 
 dependencies:
   axios: 0.27.2
+  svelte-modals: 1.1.0
   svelte-notifications: 0.9.95
 
 devDependencies:
@@ -1833,6 +1835,10 @@ packages:
     dependencies:
       svelte: 3.49.0
     dev: true
+
+  /svelte-modals/1.1.0:
+    resolution: {integrity: sha512-AB2BIy13dQExj7l6h6Rrwqx36HgX5ffh3n+rhGy5+xRpgsHHcGZKH0JkjZdKxuAqNeN1bawupQ8Y8IYr/rCVXg==}
+    dev: false
 
   /svelte-notifications/0.9.95:
     resolution: {integrity: sha512-lG+b9BH4cUDs6vjNI1vWfoAgsUca3POden08/ZlgyCSkUuuXGYPbhr3d9MF3piMjYWEA94fsyvZPDLFuxcacSg==}

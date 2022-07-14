@@ -1,7 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { openModal } from 'svelte-modals'
   import api from '$lib/api'
   import type { DirType, FileType } from '$lib/api/user/listFiles'
+  import FileUpload from '$lib/icons/FileUpload.svelte'
+  import Modal from '$lib/Modal.svelte'
+
+  let apiExecuted = false
 
   let dirs: DirType[] = []
   let files: FileType[] = []
@@ -16,6 +21,12 @@
     const data = await api.user.listFiles('/')
     dirs = data.dirs
     files = data.files
+
+    apiExecuted = true
+  }
+
+  function openUploadFileModal() {
+    openModal(Modal, { title: 'Upload File', type: 'upload', refreshFiled: getFilesList })
   }
 </script>
 
@@ -23,9 +34,16 @@
   <title>Dashboard - HomeDisk</title>
 </svelte:head>
 
+<div>
+  <a href="#upload" on:click={openUploadFileModal}>
+    <FileUpload />
+  </a>
+</div>
+
 <!-- To not show an empty table when a request is sent to the api -->
-{#if dirs.length > 0 && files.length > 0}
+{#if dirs.length > 0 || files.length > 0}
   <table>
+    <!-- Table header -->
     <thead>
       <tr>
         <th>Type</th>
@@ -34,8 +52,10 @@
         <th>Modified</th>
       </tr>
     </thead>
+
+    <!-- Table body -->
     <tbody>
-      <!-- Directories -->
+      <!-- Show directories -->
       {#each dirs as dir}
         <tr>
           <td>Directory</td>
@@ -45,7 +65,7 @@
         </tr>
       {/each}
 
-      <!-- Files -->
+      <!-- Show files -->
       {#each files as file}
         <tr>
           <td>File</td>
@@ -56,12 +76,19 @@
       {/each}
     </tbody>
   </table>
+{:else if apiExecuted}
+  <!-- Directory is empty -->
+  Empty directory
 {:else}
   <!-- Loading message -->
   Loading...
 {/if}
 
 <style>
+  div {
+    margin: 10px;
+  }
+
   table {
     table-layout: fixed;
     border: 1px dashed #ffffff;
