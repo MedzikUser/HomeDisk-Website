@@ -61,10 +61,12 @@
   .logo {
     cursor: pointer;
     padding-left: 1em;
+    font-size: x-large;
   }
 
   .nav-links {
     list-style: none;
+    font-size: x-large;
   }
 
   .nav-links li {

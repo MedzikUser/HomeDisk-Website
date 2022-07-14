@@ -5,6 +5,8 @@
   import type { DirType, FileType } from '$lib/api/user/listFiles'
   import FileUpload from '$lib/icons/FileUpload.svelte'
   import Modal from '$lib/Modal.svelte'
+import Folder from '$lib/icons/Folder.svelte'
+import File from '$lib/icons/File.svelte'
 
   let apiExecuted = false
 
@@ -35,9 +37,7 @@
 </svelte:head>
 
 <div>
-  <a href="#upload" on:click={openUploadFileModal}>
-    <FileUpload />
-  </a>
+  <span on:click={openUploadFileModal}><FileUpload /></span>
 </div>
 
 <!-- To not show an empty table when a request is sent to the api -->
@@ -46,7 +46,6 @@
     <!-- Table header -->
     <thead>
       <tr>
-        <th>Type</th>
         <th>Name</th>
         <th>Size</th>
         <th>Modified</th>
@@ -58,8 +57,7 @@
       <!-- Show directories -->
       {#each dirs as dir}
         <tr>
-          <td>Directory</td>
-          <td><a href={`?path=${dir.name}`}>{dir.name}</a></td>
+          <td><Folder /> <a href={`?path=${dir.name}`}>{dir.name}</a></td>
           <td>{dir.size}</td>
           <td>{dir.modified || 'unknown'}</td>
         </tr>
@@ -68,8 +66,7 @@
       <!-- Show files -->
       {#each files as file}
         <tr>
-          <td>File</td>
-          <td>{file.name}</td>
+          <td><File /> {file.name}</td>
           <td>{file.size}</td>
           <td>{file.modified}</td>
         </tr>
@@ -85,10 +82,6 @@
 {/if}
 
 <style>
-  div {
-    margin: 10px;
-  }
-
   table {
     table-layout: fixed;
     border: 1px dashed #ffffff;
@@ -96,6 +89,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     padding: 8px;
+    text-align: start;
   }
 
   thead {
@@ -104,8 +98,12 @@
 
   td,
   tr {
-    width: 100px;
     border-top: 1px solid #ffffff;
     padding: 8px;
+  }
+
+  span {
+    cursor: pointer;
+    font-size: 1.5em;
   }
 </style>
