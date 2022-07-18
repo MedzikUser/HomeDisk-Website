@@ -3,7 +3,7 @@
   "semi": false,
   "trailingComma": "none",
   "printWidth": 100,
-  "importOrder": ["^\\$lib/(.*)"],
+  "importOrder": ["^\\$lib/(.*)|^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

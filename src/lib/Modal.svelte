@@ -1,8 +1,8 @@
 <script lang="ts">
-  import ModalUpload from './ModalUpload.svelte'
   import { fly } from 'svelte/transition'
 
   import '$lib/css/button.css'
+  import ModalUpload from './ModalUpload.svelte'
 
   export let refreshFiled: () => void
   export let isOpen: boolean
