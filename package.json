@@ -2,7 +2,12 @@
   "name": "@homedisk/website",
   "version": "0.1.0",
   "license": "GPL-3.0",
+  "author": "MedzikUser <medzik@duck.com>",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MedzikUser/HomeDisk-Website.git"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",

@@ -5,8 +5,8 @@
   import type { DirType, FileType } from '$lib/api/user/listFiles'
   import FileUpload from '$lib/icons/FileUpload.svelte'
   import Modal from '$lib/Modal.svelte'
-import Folder from '$lib/icons/Folder.svelte'
-import File from '$lib/icons/File.svelte'
+  import Folder from '$lib/icons/Folder.svelte'
+  import File from '$lib/icons/File.svelte'
 
   let apiExecuted = false
 

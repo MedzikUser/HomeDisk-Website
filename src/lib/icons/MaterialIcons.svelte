@@ -5,13 +5,7 @@
   export let fill = 'currentColor'
 </script>
 
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  height={height}
-  width={width}
-  viewBox={viewBox}
-  fill={fill}
->
+<svg xmlns="http://www.w3.org/2000/svg" {height} {width} {viewBox} {fill}>
   <slot />
 </svg>
 
