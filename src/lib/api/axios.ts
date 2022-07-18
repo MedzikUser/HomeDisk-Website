@@ -1,5 +1,5 @@
-import axios from 'axios'
 import config from '../../config'
+import axios from 'axios'
 
 // Create an axios instance
 const instance = axios.create({

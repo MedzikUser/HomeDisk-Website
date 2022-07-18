@@ -1,11 +1,12 @@
 <script lang="ts">
+  import Account from './icons/Account.svelte'
   import { onMount } from 'svelte'
+
   import Home from '$lib/icons/Home.svelte'
   import Login from '$lib/icons/Login.svelte'
   import Logout from '$lib/icons/Logout.svelte'
-  import { deleteToken, getToken, type Token } from '$lib/utils/token'
   import redirect from '$lib/utils/redirect'
-  import Account from './icons/Account.svelte'
+  import { type Token, deleteToken, getToken } from '$lib/utils/token'
 
   let token: Token
 

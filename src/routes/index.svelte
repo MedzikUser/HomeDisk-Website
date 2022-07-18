@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+
   import AnimatedText from '$lib/AnimatedText.svelte'
   import Card from '$lib/Card.svelte'
   import Grid from '$lib/Grid.svelte'
   import { getToken } from '$lib/utils/token'
-  import { onMount } from 'svelte'
 
   let token: string | null
 

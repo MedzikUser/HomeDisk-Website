@@ -1,11 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { getNotificationsContext } from 'svelte-notifications'
-  import '$lib/css/input.css'
-  import '$lib/css/button.css'
+
   import api from '$lib/api'
-  import { getToken, setToken } from '$lib/utils/token'
+  import '$lib/css/button.css'
+  import '$lib/css/input.css'
   import redirect from '$lib/utils/redirect'
+  import { getToken, setToken } from '$lib/utils/token'
 
   let username = ''
   let password = ''

@@ -1,6 +1,6 @@
-import { getToken } from '$lib/utils/token'
 import axios from '$lib/api/axios'
 import handleError from '$lib/api/utils/handleError'
+import { getToken } from '$lib/utils/token'
 
 export default async function (path: string, file: File): Promise<Response> {
   const data = new FormData()

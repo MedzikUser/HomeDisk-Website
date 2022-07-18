@@ -1,12 +1,13 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { openModal } from 'svelte-modals'
+
+  import Modal from '$lib/Modal.svelte'
   import api from '$lib/api'
   import type { DirType, FileType } from '$lib/api/user/listFiles'
-  import FileUpload from '$lib/icons/FileUpload.svelte'
-  import Modal from '$lib/Modal.svelte'
-  import Folder from '$lib/icons/Folder.svelte'
   import File from '$lib/icons/File.svelte'
+  import FileUpload from '$lib/icons/FileUpload.svelte'
+  import Folder from '$lib/icons/Folder.svelte'
 
   let apiExecuted = false
 

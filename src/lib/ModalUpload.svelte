@@ -1,7 +1,7 @@
 <script lang="ts">
+  import api from './api'
   import { closeModal } from 'svelte-modals'
   import { getNotificationsContext } from 'svelte-notifications'
-  import api from './api'
 
   const { addNotification } = getNotificationsContext()
 
