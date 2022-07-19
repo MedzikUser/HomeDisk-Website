@@ -9,6 +9,8 @@
   import FileUpload from '$lib/icons/FileUpload.svelte'
   import Folder from '$lib/icons/Folder.svelte'
 
+  let path = new URLSearchParams(window.location.search).get('path') || '/'
+
   let apiExecuted = false
 
   let dirs: DirType[] = []
@@ -17,11 +19,24 @@
   // on page load get a list of files and directories
   onMount(() => {
     getFilesList()
+
+    setInterval(refreshFiles, 1000)
   })
+
+  // Temporary function to update the files list after click directory link
+  async function refreshFiles() {
+    let path_old = path
+    let path_new = new URLSearchParams(window.location.search).get('path') || '/'
+
+    if (path_new != path_old) {
+      getFilesList()
+    }
+  }
 
   // Send a request to the api to get a list of files and directories
   async function getFilesList() {
-    const data = await api.user.listFiles('/')
+    let path = new URLSearchParams(window.location.search).get('path') || '/'
+    const data = await api.user.listFiles(path)
     dirs = data.dirs
     files = data.files
 

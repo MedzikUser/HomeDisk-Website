@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { _ } from 'svelte-i18n'
 
   import AnimatedText from '$lib/AnimatedText.svelte'
   import Card from '$lib/Card.svelte'
@@ -16,34 +17,34 @@
 </svelte:head>
 
 <h1 class="title">
-  <AnimatedText>Welcome to HomeDisk!</AnimatedText>
+  <AnimatedText>{$_('index.title')}</AnimatedText>
 </h1>
 
-<p class="description">Fast and lightweight local cloud for your data written in Rust</p>
+<p class="description">{$_('index.description')}</p>
 
 <Grid>
   {#if !token}
     <!-- Sign in card -->
     <a href="/login" class="card-signin">
       <Card>
-        <h1>Sign in &rarr;</h1>
-        <p>Log in to your account</p>
+        <h1>{$_('index.cards.login.title')} &rarr;</h1>
+        <p>{$_('index.cards.login.description')}</p>
       </Card>
     </a>
 
     <!-- Register card -->
     <a href="/register" class="card-register">
       <Card>
-        <h1>Register &rarr;</h1>
-        <p>Create a new account</p>
+        <h1>{$_('index.cards.register.title')} &rarr;</h1>
+        <p>{$_('index.cards.register.description')}</p>
       </Card>
     </a>
   {:else}
     <!-- Dashboard card -->
     <a href="/user/dashboard" class="card-dashboard">
       <Card>
-        <h1>Dashboard &rarr;</h1>
-        <p>Go to user dashboard</p>
+        <h1>{$_('index.cards.dashboard.title')} &rarr;</h1>
+        <p>{$_('index.cards.dashboard.description')}</p>
       </Card>
     </a>
   {/if}

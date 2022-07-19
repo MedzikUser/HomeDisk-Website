@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n'
   import { closeModal } from 'svelte-modals'
   import { getNotificationsContext } from 'svelte-notifications'
 
@@ -20,7 +21,7 @@
   async function upload() {
     if (!files) {
       addNotification({
-        text: 'No file selected',
+        text: $_('modal.uploadFile.noFileSelected'),
         position: 'bottom-center',
         type: 'danger',
         removeAfter: 5000 // 5 seconds
@@ -45,7 +46,7 @@
     refreshFiled()
 
     addNotification({
-      text: 'Uploaded!',
+      text: $_('modal.uploadFile.uploaded'),
       position: 'bottom-center',
       type: 'success',
       removeAfter: 5000 // 5 seconds
@@ -58,16 +59,16 @@
 <input type="file" id="file-upload" on:change={getFilename} />
 
 {#if files && files.length > 0}
-  <p>Selected: {files[0].name}</p>
+  <p>{$_('modal.uploadFile.selected').replace('{}', files[0].name)}</p>
 {/if}
 
 <label for="file-upload">
-  <span>Select a file</span>
+  <span>{$_('modal.uploadFile.selectFile')}</span>
 </label>
 
 <div class="actions">
-  <button class="upload-button" on:click={upload}>Upload</button>
-  <button class="close-button" on:click={closeModal}>Close</button>
+  <button class="upload-button" on:click={upload}>{$_('modal.uploadFile.submit')}</button>
+  <button class="close-button" on:click={closeModal}>{$_('modal.close')}</button>
 </div>
 
 <style>

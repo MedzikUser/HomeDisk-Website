@@ -1,10 +1,19 @@
 <script>
   import Notifications from 'svelte-notifications'
+  import { getLocaleFromNavigator, init, register, isLoading } from 'svelte-i18n'
   import Header from '$lib/Header.svelte'
   import config from '../config'
-  import '../app.css'
+  import '../app.sass'
   import Container from '$lib/Container.svelte'
   import Footer from '$lib/Footer.svelte'
+
+  // setup language
+  register('en', () => import('$lib/langs/en'))
+
+  init({
+    fallbackLocale: 'en',
+    initialLocale: getLocaleFromNavigator()
+  })
 </script>
 
 <svelte:head>
@@ -22,6 +31,8 @@
   <meta property="og:title" content={config.title} />
   <meta property="og:description" content={config.description} />
   <meta property="og:image" content={config.previewImage} />
+
+  <title>HomeDisk</title>
 </svelte:head>
 
 <Notifications>
@@ -29,7 +40,9 @@
     <Header />
 
     <main>
-      <slot />
+      {#if !$isLoading}
+        <slot />
+      {/if}
     </main>
 
     <Footer />

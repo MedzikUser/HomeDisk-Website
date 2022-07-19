@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { _ } from 'svelte-i18n'
   import { getNotificationsContext } from 'svelte-notifications'
 
   import api from '$lib/api'
@@ -24,7 +25,7 @@
   async function submit() {
     if (username == '' || password == '') {
       addNotification({
-        text: 'At least one field is empty',
+        text: $_('auth.notification.emptyInput'),
         position: 'bottom-center',
         type: 'danger',
         removeAfter: 5000 // 5 seconds
@@ -60,13 +61,18 @@
   <title>Register - HomeDisk</title>
 </svelte:head>
 
-<h1>Register</h1>
+<h1>{$_('auth.register.title')}</h1>
 
-<input type="text" name="username" placeholder="Username" bind:value={username} />
+<input type="text" name="username" placeholder={$_('auth.input.username')} bind:value={username} />
 
-<input type="password" name="password" placeholder="Password" bind:value={password} />
+<input
+  type="password"
+  name="password"
+  placeholder={$_('auth.input.password')}
+  bind:value={password}
+/>
 
-<button on:click={submit}>Sign in</button>
+<button on:click={submit}>{$_('auth.register.button')}</button>
 
 <style>
   h1 {
