@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fortawesome/free-regular-svg-icons': ^6.1.1
   '@sveltejs/adapter-auto': 1.0.0-next.62
   '@sveltejs/kit': 1.0.0-next.378
   '@trivago/prettier-plugin-sort-imports': ^3.3.0
@@ -14,6 +15,7 @@ specifiers:
   prettier-plugin-svelte: 2.7.0
   sass: ^1.53.0
   svelte: 3.49.0
+  svelte-awesome: ^3.0.0
   svelte-check: 2.8.0
   svelte-i18n: ^3.4.0
   svelte-modals: 1.1.0
@@ -25,7 +27,9 @@ specifiers:
   vite: 3.0.2
 
 dependencies:
+  '@fortawesome/free-regular-svg-icons': 6.1.1
   axios: 0.27.2
+  svelte-awesome: 3.0.0_svelte@3.49.0
   svelte-i18n: 3.4.0_svelte@3.49.0
   svelte-modals: 1.1.0
   svelte-notifications: 0.9.95
@@ -343,6 +347,20 @@ packages:
     resolution: {integrity: sha512-YmLcX70BxoSopLFdLr1Ds99NdlTI2oWoLbaUW2M406lxOIPzE1KQhRz2fPUkq34xVZQaihCoU29h0KK7An3bhA==}
     dependencies:
       tslib: 2.4.0
+    dev: false
+
+  /@fortawesome/fontawesome-common-types/6.1.1:
+    resolution: {integrity: sha512-wVn5WJPirFTnzN6tR95abCx+ocH+3IFLXAgyavnf9hUmN0CfWoDjPT/BAWsUVwSlYYVBeCLJxaqi7ZGe4uSjBA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  /@fortawesome/free-regular-svg-icons/6.1.1:
+    resolution: {integrity: sha512-xXiW7hcpgwmWtndKPOzG+43fPH7ZjxOaoeyooptSztGmJxCAflHZxXNK0GcT0uEsR4jTGQAfGklDZE5NHoBhKg==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.1.1
     dev: false
 
   /@humanwhocodes/config-array/0.9.5:
@@ -2252,6 +2270,14 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /svelte-awesome/3.0.0_svelte@3.49.0:
+    resolution: {integrity: sha512-jfK+vc7f2kTFbBCk3dR1C3JA72cugh5bZHILc0gHbaSC3f1PkwPpA4OwpCRCT1Zf0hv6oaSZKxR8V2m1SKHj3Q==}
+    peerDependencies:
+      svelte: ^3.43.1
+    dependencies:
+      svelte: 3.49.0
+    dev: false
 
   /svelte-check/2.8.0_sass@1.53.0+svelte@3.49.0:
     resolution: {integrity: sha512-HRL66BxffMAZusqe5I5k26mRWQ+BobGd9Rxm3onh7ZVu0nTk8YTKJ9vu3LVPjUGLU9IX7zS+jmwPVhJYdXJ8vg==}

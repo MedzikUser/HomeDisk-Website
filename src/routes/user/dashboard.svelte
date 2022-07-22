@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { openModal } from 'svelte-modals'
+  import { _ } from 'svelte-i18n'
 
   import Modal from '$lib/Modal.svelte'
   import api from '$lib/api'
@@ -52,19 +53,19 @@
   <title>Dashboard - HomeDisk</title>
 </svelte:head>
 
-<div>
-  <span on:click={openUploadFileModal}><FileUpload /></span>
-</div>
-
 <!-- To not show an empty table when a request is sent to the api -->
 {#if dirs.length > 0 || files.length > 0}
+  <div>
+    <span on:click={openUploadFileModal}><FileUpload /></span>
+  </div>
+
   <table>
     <!-- Table header -->
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Modified</th>
+        <th>{$_('dashboard.table.header.name')}</th>
+        <th>{$_('dashboard.table.header.size')}</th>
+        <th>{$_('dashboard.table.header.modified')}</th>
       </tr>
     </thead>
 
@@ -75,7 +76,7 @@
         <tr>
           <td><Folder /> <a href={`?path=${dir.name}`}>{dir.name}</a></td>
           <td>{dir.size}</td>
-          <td>{dir.modified || 'unknown'}</td>
+          <td>{dir.modified || ''}</td>
         </tr>
       {/each}
 
@@ -91,31 +92,45 @@
   </table>
 {:else if apiExecuted}
   <!-- Directory is empty -->
-  Empty directory
+  {$_('dashboard.empty_directory')}
 {:else}
   <!-- Loading message -->
-  Loading...
+  {$_('dashboard.loading')}
 {/if}
 
 <style>
   table {
     table-layout: fixed;
-    border: 1px dashed #ffffff;
     margin: auto;
     margin-top: 5%;
     margin-bottom: 5%;
-    padding: 8px;
     text-align: start;
+    background-color: #F652A0;
+    border: 1px solid #F652A0;
+    box-shadow: 0px 0px 15px #F652A0;
   }
 
   thead {
-    color: #b8c7f4;
+    color: #FBE698;
+  }
+
+  td:nth-child(1) {
+    width: 300px;
+  }
+
+  td:nth-child(2) {
+    width: 100px;
+    text-align: center;
+  }
+
+  td:nth-child(3) {
+    text-align: center;
   }
 
   td,
   tr {
-    border-top: 1px solid #ffffff;
-    padding: 8px;
+    padding: 8px 4px 8px 4px;
+    background-color: #000000;
   }
 
   span {

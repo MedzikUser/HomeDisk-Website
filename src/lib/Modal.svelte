@@ -38,12 +38,12 @@
     min-width: 240px;
     border-radius: 6px;
     padding: 16px;
-    background: black;
-    border: 1px solid white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     pointer-events: auto;
+    background: #000000;
+    border: 1px solid #F9BDC0;
   }
 
   h2 {

@@ -43,5 +43,16 @@ export default {
       uploaded: 'Uploaded!',
       noFileSelected: 'No file selected'
     }
+  },
+  dashboard: {
+    table: {
+      header: {
+        name: 'Name',
+        size: 'Size',
+        modified: 'Modified',
+      }
+    },
+    empty_directory: "Empty directory",
+    loading: 'Loading...',
   }
 }
