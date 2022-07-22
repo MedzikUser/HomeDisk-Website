@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-
   import Home from '$lib/icons/Home.svelte'
   import Login from '$lib/icons/Login.svelte'
   import Logout from '$lib/icons/Logout.svelte'

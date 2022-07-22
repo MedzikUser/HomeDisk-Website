@@ -2,7 +2,6 @@
   import { _ } from 'svelte-i18n'
   import { closeModal } from 'svelte-modals'
   import { getNotificationsContext } from 'svelte-notifications'
-
   import api from './api'
 
   const { addNotification } = getNotificationsContext()

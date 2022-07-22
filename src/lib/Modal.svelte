@@ -1,6 +1,5 @@
 <script lang="ts">
   import { fly } from 'svelte/transition'
-
   import '$lib/css/button.css'
   import ModalUpload from './ModalUpload.svelte'
 

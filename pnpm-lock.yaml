@@ -13,7 +13,7 @@ specifiers:
   eslint-plugin-svelte3: 4.0.0
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0
-  sass: ^1.53.0
+  sass: 1.53.0
   svelte: 3.49.0
   svelte-awesome: ^3.0.0
   svelte-check: 2.8.0

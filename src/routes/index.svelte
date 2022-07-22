@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { _ } from 'svelte-i18n'
-
   import AnimatedText from '$lib/AnimatedText.svelte'
   import Card from '$lib/Card.svelte'
   import Grid from '$lib/Grid.svelte'

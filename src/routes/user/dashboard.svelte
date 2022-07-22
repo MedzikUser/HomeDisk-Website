@@ -2,7 +2,6 @@
   import { onMount } from 'svelte'
   import { _ } from 'svelte-i18n'
   import { openModal } from 'svelte-modals'
-
   import Modal from '$lib/Modal.svelte'
   import api from '$lib/api'
   import type { DirType, FileType } from '$lib/api/user/listFiles'

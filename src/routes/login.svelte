@@ -2,7 +2,6 @@
   import { onMount } from 'svelte'
   import { _ } from 'svelte-i18n'
   import { getNotificationsContext } from 'svelte-notifications'
-
   import api from '$lib/api'
   import '$lib/css/button.css'
   import '$lib/css/input.css'
