@@ -2,10 +2,10 @@
   import { onMount } from 'svelte'
   import { _ } from 'svelte-i18n'
   import { getNotificationsContext } from 'svelte-notifications'
+  import { goto } from '$app/navigation'
   import api from '$lib/api'
   import '$lib/css/button.css'
   import '$lib/css/input.css'
-  import redirect from '$lib/utils/redirect'
   import { getToken, setToken } from '$lib/utils/token'
 
   let username = ''
@@ -15,7 +15,7 @@
     let token = getToken()
 
     if (token) {
-      redirect('/user/dashboard')
+      goto('/user/dashboard')
     }
   })
 
@@ -44,7 +44,7 @@
 
       setToken(token)
 
-      redirect('/user/dashboard')
+      goto('/user/dashboard')
     } catch (err: any) {
       addNotification({
         text: err.toString(),

@@ -1,3 +1,8 @@
+<script context="module">
+  /** @type {import('@sveltejs/kit').Load} */
+  export const load = async ({ url }) => ({ props: { url } })
+</script>
+
 <script>
   import Notifications from 'svelte-notifications'
   import { getLocaleFromNavigator, init, register, isLoading } from 'svelte-i18n'
@@ -6,6 +11,7 @@
   import '../app.sass'
   import Container from '$lib/Container.svelte'
   import Footer from '$lib/Footer.svelte'
+  import PageTransition from '$lib/PageTransition.svelte'
 
   // setup language
   register('en', () => import('$lib/langs/en'))
@@ -14,6 +20,8 @@
     fallbackLocale: 'en',
     initialLocale: getLocaleFromNavigator()
   })
+
+  export let url = ''
 </script>
 
 <svelte:head>
@@ -38,10 +46,9 @@
 <Notifications>
   <Container>
     <Header />
-
     <main>
       {#if !$isLoading}
-        <slot />
+        <PageTransition {url}><slot /></PageTransition>
       {/if}
     </main>
 

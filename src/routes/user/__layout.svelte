@@ -6,13 +6,13 @@
 <script>
   import { onMount } from 'svelte'
   import { Modals, closeModal } from 'svelte-modals'
-  import redirect from '$lib/utils/redirect'
   import { getToken } from '$lib/utils/token'
+  import { goto } from '$app/navigation'
 
   onMount(() => {
     const token = getToken()
     if (!token) {
-      redirect('/login')
+      goto('/login')
     }
   })
 </script>

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { goto } from '$app/navigation'
   import Home from '$lib/icons/Home.svelte'
   import Login from '$lib/icons/Login.svelte'
   import Logout from '$lib/icons/Logout.svelte'
-  import redirect from '$lib/utils/redirect'
   import { type Token, deleteToken, getToken } from '$lib/utils/token'
   import Account from './icons/Account.svelte'
 
@@ -16,7 +16,7 @@
   function logout() {
     deleteToken()
 
-    redirect('/')
+    goto('/')
     // TODO: send request to api
   }
 </script>
