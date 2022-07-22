@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { openModal } from 'svelte-modals'
   import { _ } from 'svelte-i18n'
+  import { openModal } from 'svelte-modals'
 
   import Modal from '$lib/Modal.svelte'
   import api from '$lib/api'
@@ -105,13 +105,13 @@
     margin-top: 5%;
     margin-bottom: 5%;
     text-align: start;
-    background-color: #F652A0;
-    border: 1px solid #F652A0;
-    box-shadow: 0px 0px 15px #F652A0;
+    background-color: #f652a0;
+    border: 1px solid #f652a0;
+    box-shadow: 0px 0px 15px #f652a0;
   }
 
   thead {
-    color: #FBE698;
+    color: #fbe698;
   }
 
   td:nth-child(1) {

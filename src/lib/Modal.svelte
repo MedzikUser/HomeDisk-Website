@@ -43,7 +43,7 @@
     justify-content: space-between;
     pointer-events: auto;
     background: #000000;
-    border: 1px solid #F9BDC0;
+    border: 1px solid #f9bdc0;
   }
 
   h2 {

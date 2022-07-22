@@ -6,7 +6,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MedzikUser/HomeDisk-Website.git"
+    "url": "git+https://github.com/MedzikUser/HomeDisk-Website.git"
   },
   "scripts": {
     "dev": "vite dev",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "1.0.0-next.62",
     "@sveltejs/kit": "1.0.0-next.378",
-    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@trivago/prettier-plugin-sort-imports": "3.3.0",
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
     "eslint": "8.20.0",

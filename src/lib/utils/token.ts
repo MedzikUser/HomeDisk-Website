@@ -22,7 +22,7 @@ export function getToken(): Token {
 
   const entry: TokenEntry = JSON.parse(entryStringify)
 
-  let now = new Date()
+  const now = new Date()
 
   // compare the expiry time of the entry with current time
   if (now.getTime() > entry.expires) {

@@ -49,10 +49,10 @@ export default {
       header: {
         name: 'Name',
         size: 'Size',
-        modified: 'Modified',
+        modified: 'Modified'
       }
     },
-    empty_directory: "Empty directory",
-    loading: 'Loading...',
+    empty_directory: 'Empty directory',
+    loading: 'Loading...'
   }
 }
