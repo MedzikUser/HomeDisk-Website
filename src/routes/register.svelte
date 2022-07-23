@@ -61,8 +61,20 @@
 <form class="box" on:submit|preventDefault={submit}>
   <h2 class="title">Home<span>Disk</span></h2>
   <h4 class="description">{$_('auth.register.description')}</h4>
-  <input type="text" name="username" placeholder={$_('auth.input.username')} autocomplete="off" bind:value={username} />
-  <input type="password" name="password" placeholder={$_('auth.input.password')} autocomplete="off" bind:value={password} />
+  <input
+    type="text"
+    name="username"
+    placeholder={$_('auth.input.username')}
+    autocomplete="off"
+    bind:value={username}
+  />
+  <input
+    type="password"
+    name="password"
+    placeholder={$_('auth.input.password')}
+    autocomplete="off"
+    bind:value={password}
+  />
   <input type="submit" value={$_('auth.register.button')} />
 </form>
 
@@ -121,7 +133,7 @@
     color: white;
     border-radius: 100px;
     background: transparent;
-    transition: all 1000ms;
+    transition: all 500ms;
     border: 2px solid #ef7c8e;
     color: #ef7c8e;
   }
@@ -129,10 +141,11 @@
   input[type='submit']:hover {
     border-color: #ff3b9d;
     color: #ff3b9d;
+    cursor: pointer;
   }
 
   a {
-    color: #FF69B4;
+    color: #ff69b4;
     text-decoration: none;
   }
 

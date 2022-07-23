@@ -27,7 +27,7 @@ export default {
     },
     signin: {
       description: 'Sign in to your account.',
-      link: 'Don\'t have an account? Sign up',
+      link: "Don't have an account? Sign up",
       button: 'Sign in'
     },
     register: {
