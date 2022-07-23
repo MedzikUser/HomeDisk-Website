@@ -26,11 +26,13 @@ export default {
       emptyInput: 'At least one field is empty'
     },
     signin: {
-      title: 'Sign in',
+      description: 'Sign in to your account.',
+      link: 'Don\'t have an account? Sign up',
       button: 'Sign in'
     },
     register: {
-      title: 'Register',
+      description: 'Create an account.',
+      link: 'Do have an account? Sign in',
       button: 'Register'
     }
   },

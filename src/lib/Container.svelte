@@ -10,5 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    /* background-color: rgb(33, 41, 66); */
   }
 </style>

@@ -1,7 +1,7 @@
 input {
   display: block;
   background: none;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   outline: none;
   margin: 0;
@@ -18,5 +18,5 @@ input:valid {
 }
 
 input:invalid {
-  border: 2px solid #f1c0b9;
+  border-color: #f1c0b9;
 }

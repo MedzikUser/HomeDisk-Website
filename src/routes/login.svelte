@@ -4,8 +4,6 @@
   import { getNotificationsContext } from 'svelte-notifications'
   import { goto } from '$app/navigation'
   import api from '$lib/api'
-  import '$lib/css/button.css'
-  import '$lib/css/input.css'
   import { getToken, setToken } from '$lib/utils/token'
 
   let username = ''
@@ -60,45 +58,90 @@
   <title>Login - HomeDisk</title>
 </svelte:head>
 
-<h1>{$_('auth.signin.title')}</h1>
+<form class="box" on:submit|preventDefault={submit}>
+  <h2 class="title">Home<span>Disk</span></h2>
+  <h4 class="description">{$_('auth.signin.description')}</h4>
+  <input type="text" name="username" placeholder={$_('auth.input.username')} autocomplete="off" bind:value={username} />
+  <input type="password" name="password" placeholder={$_('auth.input.password')} autocomplete="off" bind:value={password} />
+  <input type="submit" value={$_('auth.signin.button')} />
+</form>
 
-<input type="text" name="username" placeholder={$_('auth.input.username')} bind:value={username} />
-
-<input
-  type="password"
-  name="password"
-  placeholder={$_('auth.input.password')}
-  bind:value={password}
-/>
-
-<button on:click={submit}>{$_('auth.signin.button')}</button>
+<a href="/register" class="other-auth-link">{$_('auth.signin.link')}</a>
 
 <style>
-  h1 {
-    color: #f3bc50;
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+
+  .title {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #5c6bc0;
   }
 
-  input {
-    border-color: #ff8aff;
-    margin: 0.5em;
+  .title span {
+    color: #dfdeee;
+    font-weight: lighter;
   }
 
-  input:focus {
+  .description {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #abadb8;
+    letter-spacing: 1.5px;
+    margin-top: -1rem;
+    margin-bottom: 2em;
+  }
+
+  input[type='text'],
+  input[type='password'] {
+    display: block;
+    margin: 1em;
+    background: inherit;
+    border-radius: 5px;
+    padding: 14px 10px;
+    width: 300px;
+    outline: none;
+    color: #ffffff;
+    font-size: 1em;
+    transition: all 500ms;
+    border: 2px solid #ff8aff;
+  }
+
+  input[type='password'] {
+    margin-bottom: 0;
+  }
+
+  input[type='text']:focus,
+  input[type='password']:focus {
     border-color: #ff2eff;
   }
 
-  input::placeholder {
-    color: #ffffff;
-  }
-
-  button {
+  input[type='submit'] {
+    margin-top: 1rem;
+    padding: 10px 40px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    border-radius: 100px;
+    background: transparent;
+    transition: all 1000ms;
     border: 2px solid #ef7c8e;
     color: #ef7c8e;
   }
 
-  button:hover,
-  button:focus {
+  input[type='submit']:hover {
     border-color: #ff3b9d;
     color: #ff3b9d;
+  }
+
+  a {
+    color: #FF69B4;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .other-auth-link {
+    display: block;
+    margin-top: 10px;
   }
 </style>

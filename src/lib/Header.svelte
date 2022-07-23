@@ -60,7 +60,7 @@
 
   .logo {
     cursor: pointer;
-    padding-left: 1em;
+    margin-left: 1em;
     font-size: x-large;
   }
 
@@ -71,7 +71,7 @@
 
   .nav-links li {
     display: inline-block;
-    padding: 0px 20px;
+    margin: 0px 20px;
   }
 
   .nav-links li a {
