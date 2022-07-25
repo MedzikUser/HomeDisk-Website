@@ -22,8 +22,8 @@
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "axios": "0.27.2",
-    "svelte-awesome": "^3.0.0",
-    "svelte-i18n": "^3.4.0",
+    "svelte-awesome": "3.0.0",
+    "svelte-i18n": "3.4.0",
     "svelte-modals": "1.1.0",
     "svelte-notifications": "0.9.95"
   },
